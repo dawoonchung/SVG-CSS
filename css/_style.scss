@@ -1,0 +1,165 @@
+main {
+  width: 80%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+aside {
+  button {
+    background: transparent;
+    border: 1px solid #3C7571;
+    color: #3C7571;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+
+    &:hover {
+      background: #3C7571;
+      color: #FFF;
+    }
+
+    &:active {
+      background: darken(#3C7571, 10%);
+    }
+
+    &.current {
+      background: #3E6485;
+      color: #FFF;
+
+        &:hover {
+          background: lighten(#3E6485, 10%);
+          color: #FFF;
+        }
+
+        &:active {
+          background: darken(#3E6485, 10%);
+        }
+    }
+  }
+}
+
+$ratio: (80/150);
+
+div {
+  display: inline-block;
+  margin: 0 5% 5%;
+
+  &.large {
+    width: 150px;
+    height: 80px;
+  }
+  &.medium {
+    width: 100px;
+    height: ($ratio * 100px);
+    overflow: hidden;
+  }
+  &.small {
+    width: 50px;
+    height: ($ratio * 50px);
+  }
+}
+
+@import 'keyframes';
+
+.logo {
+  width: 100%;
+  height: 100%;
+
+
+  .q, .dot1, .dot2 {
+    transform-origin: center center;
+    transition: all 0.3s ease-in;
+  }
+
+  .q {
+    transform: rotate(-180deg) scale(0);
+  }
+
+  .e {
+    transform-origin: top center;
+    transform: scale(1, 0);
+    transition: all 0.3s;
+  }
+
+  .d1, .d2 {
+    transform-origin: top center;
+    transition: all 0.3s;
+  }
+
+  .d1 {
+    transform: rotate(180deg) scale(0);
+  }
+
+  .d2 {
+    transition-delay: 0.1s;
+    transform: rotate(180deg) scale(0);
+  }
+
+  &.loading {
+    .dot1 {
+      transition-delay: 0.3s;
+      transform: translate(0,0) rotate(0) scale(1);
+      animation: roll 0.8s 0.7s infinite;
+    }
+    .dot2 {
+      transition-delay: 0.4s;
+      transform: translate(170%,0) rotate(0) scale(1);
+      animation: jump 0.8s 0.7s linear infinite;
+    }
+  }
+
+  &.logo-q {
+    .dot1 {
+      transform: translate(0, 0) rotate(0) scale(1);
+    }
+    .dot2 {
+      transform: translate(0, -300%) rotate(-90deg) scale(0);
+    }
+    .q {
+      transform: rotate(0) scale(1);
+    }
+  }
+
+  &.logo-e {
+    .dot1 {
+      transition-delay: 0.6s;
+      transition-duration: 0.1s;
+      transform: translate(-24%, 0) rotate(-90deg) scale(1);
+    }
+    .dot2 {
+      animation: fly 0.3s forwards ease-in;
+      transition-delay: 0.3s;
+      transform: translate(-24%, -600%) rotate(180deg) scale(2, 2);
+    }
+
+    .e {
+      animation: drop 0.3s 0.5s forwards ease-in-out;
+      transition-delay: 0.8s;
+      transform: scale(1,1);
+    }
+  }
+
+  &.logo-d {
+    .dot1 {
+      animation: prepare-left 0.2s forwards ease-out, fly-left 0.2s 0.3s forwards ease-in;
+      transition-delay: 0.5s;
+      transform: translate(-81%, -335%) rotate(0) scale(0);
+    }
+    .dot2 {
+      animation: prepare-right 0.2s forwards ease-out, fly-right 0.2s 0.4s forwards ease-in;
+      transition-delay: 0.6s;
+      transform: translate(58%, -335%) rotate(0) scale(0);
+    }
+    .d1 {
+      animation: appear-left 0.1s 0.7s forwards ease-in;
+      transition-delay: 0.7s;
+      transform: scale(1)
+    }
+    .d2 {
+      animation: appear-right 0.1s 0.8s forwards ease-in;
+      transition-delay: 0.8s;
+      transform: scale(1)
+    }
+  }
+}
+

@@ -1,0 +1,98 @@
+@keyframes roll {
+  from {
+    transform: translateX(0) rotate(0);
+  }
+  to {
+    transform: translateX(170%) rotate(180deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(170%, 0) rotate(-180deg);
+  }
+  25% {
+    transform: translate(180%, -100%) rotate(-135deg);
+  }
+  50% {
+    transform: translate(85%, -200%) rotate(-90deg);
+  }
+  75% {
+    transform: translate(-10%, -100%) rotate(-45deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes fly {
+  from {
+    transform: translate(170%, 0) rotate(0) scale(1, 1);
+  }
+  to {
+    transform: translate(-24%, -600%) rotate(180deg) scale(2, 2);
+  }
+}
+@keyframes drop {
+  0% {
+    transform: scale(2, 0);
+  }
+  50% {
+    transform: scale(1, 1.1);
+  }
+  75% {
+    transform: scale(1, 0.8);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes prepare-left {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(0, 0) rotate(-20deg);
+  }
+}
+@keyframes prepare-right {
+  from {
+    transform: translate(170%,0) rotate(0);
+  }
+  to {
+    transform: translate(170%,0) rotate(20deg);
+  }
+}
+@keyframes fly-left {
+  from {
+    transform: translate(0, 0) rotate(-20deg) scale(1);
+  }
+  to {
+    transform: translate(-81%, -335%) rotate(180deg) scale(0);
+  }
+}
+@keyframes fly-right {
+  from {
+    transform: translate(170%,0) rotate(20deg) scale(1);
+  }
+  to {
+    transform: translate(58%, -335%) rotate(-180deg) scale(0);
+  }
+}
+@keyframes appear-left {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes appear-right {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
